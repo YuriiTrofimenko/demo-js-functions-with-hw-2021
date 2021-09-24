@@ -220,3 +220,7 @@ function a() {
     return v += arg
   }
 }
+
+const childFunction = a()
+console.log(childFunction(3))
+console.log(childFunction(5))

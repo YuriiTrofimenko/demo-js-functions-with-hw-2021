@@ -214,5 +214,8 @@ while (!result.done) {
 
 /* HW */
 function a() {
-  
+  let v = 0
+  return function () {
+    
+  }
 }

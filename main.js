@@ -216,11 +216,18 @@ while (!result.done) {
 function a() {
   let v = 0
   return function (arg) {
-    // TODO check it
-    return v += arg
+    const tmp = v
+    v += arg
+    return tmp
   }
 }
 
 const childFunction = a()
-console.log(childFunction(3))
-console.log(childFunction(5))
+// call #1
+console.log(childFunction(3)) // return #1: 0
+// call #2
+console.log(childFunction(5)) // return #2: 3
+// call #3
+console.log(childFunction(5000)) // return #3: ?
+console.log(childFunction(-5000))
+console.log(childFunction(0))

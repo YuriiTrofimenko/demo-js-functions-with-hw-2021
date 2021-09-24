@@ -215,7 +215,8 @@ while (!result.done) {
 /* HW */
 function a() {
   let v = 0
-  return function () {
-    
+  return function (arg) {
+    // TODO check it
+    return v += arg
   }
 }

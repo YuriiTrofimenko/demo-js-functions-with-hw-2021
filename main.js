@@ -213,7 +213,7 @@ while (!result.done) {
 } */
 
 /* HW */
-function a() {
+/* function a() {
   let v = 0
   return function (arg) {
     const tmp = v
@@ -230,4 +230,84 @@ console.log(childFunction(5)) // return #2: 3
 // call #3
 console.log(childFunction(5000)) // return #3: ?
 console.log(childFunction(-5000))
-console.log(childFunction(0))
+console.log(childFunction(0)) */
+
+/* Lambda */
+
+/* let x = 10
+{
+  let x = 20
+}
+console.log(x) */
+
+/* const f1 = () => {
+  console.log(this)
+}
+const f2 = function () {
+  console.log(this)
+} */
+
+/* const f3 = x => {
+  console.log(x)
+} */
+
+/* const f4 = (x, y) => {
+  console.log(x + y)
+} */
+
+// f1()
+// f2()
+// f3(200)
+// f4(10, 30)
+// f4(30)
+
+const integers = [1, 10, -4, 5, 100, 0, 10]
+// const strings = ['John', 'Bill', 'Mary', 'Vasyl', 'Noname']
+const strings = [{name: 'John'}, {name: 'Bill'}, {name: 'Mary'}, {name: 'Vasyl'}, {name: 'Noname'}]
+
+/* function sort(array) {
+  let isSorted
+  do {
+    isSorted = true
+    for (let i = 0; i < array.length - 1; i++) {
+      if (array[i] < array[i + 1]) {
+        // swap (loop step 2: i === 1)
+        const tmp = array[i] // tmp === 10
+        array[i] = array[i + 1] // array[i] === array[1] === -4
+        array[i + 1] = tmp // array[i + 1] === array[2] === 10
+        isSorted = false
+      }
+    }
+  } while (!isSorted)
+} */
+
+function sort(array, compare) {
+  let isSorted
+  do {
+    isSorted = true
+    for (let i = 0; i < array.length - 1; i++) {
+      if (compare(array[i], array[i + 1]) > 0) {
+        // swap (loop step 2: i === 1)
+        const tmp = array[i] // tmp === 10
+        array[i] = array[i + 1] // array[i] === array[1] === -4
+        array[i + 1] = tmp // array[i + 1] === array[2] === 10
+        isSorted = false
+      }
+    }
+  } while (!isSorted)
+}
+
+// sort(integers)
+// sort(strings)
+// console.log(integers)
+// console.log(strings)
+// sort(integers, (a, b) => a - b)
+
+// sort(integers, (a, b) => b - a)
+// console.log(integers)
+
+// sort(strings, (a, b) => a.localeCompare(b))
+// console.log(strings)
+
+sort(strings, (a, b) => b.name.localeCompare(a.name))
+console.log(strings)

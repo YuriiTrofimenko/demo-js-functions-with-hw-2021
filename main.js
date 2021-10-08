@@ -263,18 +263,18 @@ const f2 = function () {
 
 const integers = [1, 10, -4, 5, 100, 0, 10]
 // const strings = ['John', 'Bill', 'Mary', 'Vasyl', 'Noname']
-const strings = [{name: 'John'}, {name: 'Bill'}, {name: 'Mary'}, {name: 'Vasyl'}, {name: 'Noname'}]
+const strings = [{name: 'John', age: 10}, {name: 'Bill', age: 20}, {name: 'Mary', age: 21}, {name: 'Vasyl', age: 30}, {name: 'Noname', age: 65}]
 
 /* function sort(array) {
   let isSorted
   do {
     isSorted = true
     for (let i = 0; i < array.length - 1; i++) {
-      if (array[i] < array[i + 1]) {
+      if (array[i + 1].name.localeCompare(array[i].name) > 0) {
         // swap (loop step 2: i === 1)
-        const tmp = array[i] // tmp === 10
-        array[i] = array[i + 1] // array[i] === array[1] === -4
-        array[i + 1] = tmp // array[i + 1] === array[2] === 10
+        const tmp = array[i] // tmp === 1
+        array[i] = array[i + 1] // array[i] === array[0] === 10
+        array[i + 1] = tmp // array[i + 1] === array[1] === 1
         isSorted = false
       }
     }
@@ -303,8 +303,13 @@ function sort(array, compare) {
 // console.log(strings)
 // sort(integers, (a, b) => a - b)
 
-// sort(integers, (a, b) => b - a)
-// console.log(integers)
+sort(integers, (a, b) => {
+  return b - a
+})
+console.log(integers)
+
+sort(integers, (a, b) => a - b)
+console.log(integers)
 
 // sort(strings, (a, b) => a.localeCompare(b))
 // console.log(strings)

@@ -261,9 +261,9 @@ const f2 = function () {
 // f4(10, 30)
 // f4(30)
 
-const integers = [1, 10, -4, 5, 100, 0, 10]
+// const integers = [1, 10, -4, 5, 100, 0, 10]
 // const strings = ['John', 'Bill', 'Mary', 'Vasyl', 'Noname']
-const strings = [{name: 'John', age: 10}, {name: 'Bill', age: 20}, {name: 'Mary', age: 21}, {name: 'Vasyl', age: 30}, {name: 'Noname', age: 65}]
+// const strings = [{name: 'John', age: 10}, {name: 'Bill', age: 20}, {name: 'Mary', age: 21}, {name: 'Vasyl', age: 30}, {name: 'Noname', age: 65}]
 
 /* function sort(array) {
   let isSorted
@@ -281,7 +281,7 @@ const strings = [{name: 'John', age: 10}, {name: 'Bill', age: 20}, {name: 'Mary'
   } while (!isSorted)
 } */
 
-function sort(array, compare) {
+/* function sort(array, compare) {
   let isSorted
   do {
     isSorted = true
@@ -295,7 +295,7 @@ function sort(array, compare) {
       }
     }
   } while (!isSorted)
-}
+} */
 
 // sort(integers)
 // sort(strings)
@@ -303,7 +303,7 @@ function sort(array, compare) {
 // console.log(strings)
 // sort(integers, (a, b) => a - b)
 
-sort(integers, (a, b) => {
+/* sort(integers, (a, b) => {
   return b - a
 })
 console.log(integers)
@@ -315,4 +315,30 @@ console.log(integers)
 // console.log(strings)
 
 sort(strings, (a, b) => b.name.localeCompare(a.name))
-console.log(strings)
+console.log(strings) */
+
+
+/* Recursion (TDD - Test Driven Development)*/
+
+// n -> [0; Infinity]
+
+// 1
+console.log(5, ' -> ', fib(5)) // 5
+console.log(6, ' -> ', fib(6)) // 8
+console.log(7, ' -> ', fib(7)) // 13
+
+// 2
+// function fib(n) {}
+
+// 3
+function fib(n) {
+  if (n < 2) {
+    return n
+  }
+  return fib(n - 1) + fib(n - 2)
+}
+
+console.log(40, ' -> ', fib(40))
+
+// 3! = 1 * 2 * 3
+// 5! = 1 * 2 * 3 * 4 * 5

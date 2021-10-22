@@ -323,14 +323,61 @@ console.log(strings) */
 // n -> [0; Infinity]
 
 // 1
-console.log(5, ' -> ', fib(5)) // 5
-console.log(6, ' -> ', fib(6)) // 8
-console.log(7, ' -> ', fib(7)) // 13
+// console.log(5, ' -> ', fib(5)) // 5
+// console.log(6, ' -> ', fib(6)) // 8
+// console.log(7, ' -> ', fib(7)) // 13
 
 // 2
 // function fib(n) {}
 
 // 3
+/* function fib(n) {
+  if (n < 2) {
+    return n
+  }
+  return fib(n - 1) + fib(n - 2)
+}
+
+console.log(40, ' -> ', fib(40)) */
+
+// 3! = 1 * 2 * 3
+// 5! = 1 * 2 * 3 * 4 * 5
+
+// 4
+// console.log('fact(5) === 120 : ', fact(5) === 120)
+
+// 4.1 (Loop Approache)
+/* function fact(n) {
+  let result = n
+  while (n > 1) {
+    result *= --n
+    // n = n - 1
+    // result = result * n
+  }
+  return result
+}
+
+for (let i = 1; i <= 5; i++) {
+  console.log(`fact(${i}) = `, fact(i))
+} */
+
+// 4.2 (Recursion Approache)
+/* function fact(n) {
+  return (n <= 1) ? 1 : n * fact(--n)
+}
+
+for (let i = 1; i <= 5; i++) {
+  console.log(`fact(${i}) = `, fact(i))
+} */
+
+// 3 * ?
+// 2 * ?
+// 1 * 1
+
+// 3 * 2
+// 2 * 1
+// 1 * 1
+
 function fib(n) {
   if (n < 2) {
     return n
@@ -338,7 +385,4 @@ function fib(n) {
   return fib(n - 1) + fib(n - 2)
 }
 
-console.log(40, ' -> ', fib(40))
-
-// 3! = 1 * 2 * 3
-// 5! = 1 * 2 * 3 * 4 * 5
+console.log(40, ' -> ', fib(50))
